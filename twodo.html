@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>be curiiou2 about me,</title> 
+    <link rel="icon" type="image/png" href="reg/gemini.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+@keyframes bgscroll {
+    from {background-position: 200px 200px;}
+    to {background-position: -200px -200px;}
+}
+
+@keyframes borderFlash {
+    0%, 49.9% { border-color: #F20000; }
+    50%, 100% { border-color: #003BFF; }
+}
+
+@keyframes flashRedSide {
+    0%, 49.9% { border-color: #A30000; }
+    50%, 100% { border-color: #2D0000; }
+}
+
+@keyframes flashBlueSide {
+    0%, 49.9% { border-color: #0019A3; }
+    50%, 100% { border-color: #003BFF; }
+}
+
+img {float:left;}
+
+body {
+    background-image:url(reg/bg2.png);
+    background-size: 200px 200px;
+    color: #a1a100;
+    animation: bgscroll 10s linear infinite;
+    overflow: hidden; 
+    font-family: "Courier New", courier;
+    scrollbar-color: #a1a100 transparent;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: black;
+    padding: 20px;
+    margin: 0px; 
+    border-radius: 0px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+    border: 5px solid #F20000;
+    animation: borderFlash 3s steps(1) infinite;
+}
+
+.archive-scroll-box {
+    width: 100%; 
+    flex-grow: 1; 
+    box-sizing: border-box;
+    overflow-y: auto; 
+    scrollbar-color: #a1a100 #000000;
+    scrollbar-width: thin;
+}
+
+.archive-scroll-box::-webkit-scrollbar { width: 10px; }
+.archive-scroll-box::-webkit-scrollbar-track { background: #000000; }
+.archive-scroll-box::-webkit-scrollbar-thumb {
+    background: #a1a100;
+    border: 2px solid #000000;
+}
+.archive-scroll-box::-webkit-scrollbar-thumb:hover { background: #FFF; }
+
+.spitshine-grid {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.shine-column {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.shine-column h2 {
+    margin-top: 0;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: dashed 2px;
+    padding-bottom: 8px;
+}
+
+.red-side {
+    border: 4px solid #A30000;
+    animation: flashRedSide 2s steps(1) infinite;
+}
+.red-side h2 {
+    color: #FF2222;
+    border-color: #A30000;
+}
+
+.blue-side {
+    border: 4px solid #003BFF;
+    animation: flashBlueSide 2s steps(1) infinite;
+}
+.blue-side h2 {
+    color: #4477FF;
+    border-color: #003BFF;
+}
+
+.shine-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shine-list li {
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
+
+.status-tag {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.red-side .status-tag { color: #A30000; }
+.blue-side .status-tag { color: #003BFF; }
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: #a1a100;
+    font-family: "Courier New", courier;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+.toggle-btn:hover { color: #FFF; }
+</style>
+
+<body>
+    <div style="width: 100%; max-width: 800px; margin: auto; height: 100%; display: flex; flex-direction: column; gap: 15px; box-sizing: border-box;">
+    
+    <div style="flex-shrink: 0; display: flex; justify-content: center; width: 100%;">
+        <img src="reg/gettingtwoknow.gif" alt="spitshine layout banner" style="float: none; max-width: 100%; height: auto;">
+    </div>
+
+    <div class="container archive-scroll-box" style="padding: 15px;">
+        
+        <div class="spitshine-grid">
+            
+            <div class="shine-column red-side">
+                <h2 class="quirk-me">online shit</h2>
+                <ul class="shine-list">
+                    <li>
+                        <span class="status-tag">[SOON TM]</span>
+                        <span class="quirk-me">i need to write about myself in the home page.</span>
+                    </li>
+                    <li>
+                        <span class="status-tag">[NEED TWO GET ASAP]</span>
+                        <span class="quirk-me">a new fucking computer. god this laptop sucks dick.</span>
+                    </li>
+                    <li>
+                        <span class="status-tag">[NEVER GOING TWO DO]</span>
+                        <span class="quirk-me">add credit to all stamps that need them. thatll take forever though.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="shine-column blue-side">
+                <h2 class="quirk-me">STUFF IM DOING RIGHT NOW</h2>
+                <ul class="shine-list">
+                    <li>
+                        <span class="status-tag">[GAME]</span>
+                        <span class="quirk-me">currently playing persona 4 golden right now.</span>
+                    </li>
+                    <li>
+                        <span class="status-tag">[MUSIC]</span>
+                        <span class="quirk-me">im big into the paper chase right now.</span>
+                    </li>
+                    <li>
+                        <span class="status-tag">[PLAY]</span>
+                        <span class="quirk-me">kind of want to get better at heroes of the storm. its shit but at the same time its kind of a riot.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div style="width: 100%; flex-shrink: 0; display: flex; flex-direction: row; justify-content: space-around; align-items: center; box-sizing: border-box; overflow: hidden; padding: 15px;" class="container">
+        <a href="index.html" style="color: #a1a100;">HOME</a>
+        <a href="blog.html" style="color: #a1a100;">BLOG</a>
+        <a href="twodo.html" style="color: #a1a100;">TWO DO</a>
+        <button class="toggle-btn" id="quirkToggle">QUIRK: ON</button>
+    </div>
+
+</div>
+
+<script>
+    const titles = ["lol."];
+    let currentIndex = 0;
+    function cycleTitle() {
+        document.title = titles[currentIndex];
+        currentIndex = (currentIndex + 1) % titles.length;
+    }
+    setInterval(cycleTitle, 2000);
+
+    function applySolluxQuirk(text) {
+        return text
+            .replace(/\bto\b/gi, 'two')
+            .replace(/\btoo\b/gi, 'two')
+            .replace(/\btwo\b/gi, 'two')
+            .replace(/s/g, '2')
+            .replace(/S/g, '2')
+            .replace(/i/g, 'ii')
+            .replace(/I/g, 'ii');
+    }
+
+    const quirkElements = document.querySelectorAll('.quirk-me');
+    const toggleBtn = document.getElementById('quirkToggle');
+    
+    quirkElements.forEach(el => {
+        const originalText = el.textContent;
+        el.setAttribute('data-normal', originalText);
+        el.setAttribute('data-quirked', applySolluxQuirk(originalText));
+    });
+
+    function renderText(quirkOff) {
+        quirkElements.forEach(el => {
+            if (quirkOff === 'true') {
+                el.textContent = el.getAttribute('data-normal');
+            } else {
+                el.textContent = el.getAttribute('data-quirked');
+            }
+        });
+    }
+
+    let savedQuirkState = localStorage.getItem('quirkOff') || 'false';
+
+    if (savedQuirkState === 'true') {
+        if (toggleBtn) toggleBtn.textContent = 'QUIRK: OFF';
+    } else {
+        if (toggleBtn) toggleBtn.textContent = 'QUIRK: ON';
+    }
+    renderText(savedQuirkState);
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            let currentState = localStorage.getItem('quirkOff') === 'true';
+            let newState = !currentState;
+            
+            localStorage.setItem('quirkOff', newState.toString());
+            toggleBtn.textContent = newState ? 'QUIRK: OFF' : 'QUIRK: ON';
+            renderText(newState.toString());
+        });
+    }
+</script>
+</body>
+</html>
