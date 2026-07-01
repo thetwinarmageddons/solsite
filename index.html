@@ -1,119 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>2up fucker.</title> 
     <link rel="icon" type="image/png" href="reg/gemini.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes bgscroll {
+            from {background-position: 200px 200px;}
+            to {background-position: -200px -200px;}
+        }
+
+        @keyframes stampScroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); } 
+        }
+
+        @keyframes borderFlash {
+            0%, 49.9% { border-color: #F20000; }
+            50%, 100% { border-color: #003BFF; }
+        }
+
+        img { float: left; }
+
+        body {
+            background-image: url(reg/bg2.png);
+            background-size: 200px 200px;
+            color: #a1a100;
+            animation: bgscroll 10s linear infinite;
+            overflow: hidden; 
+            font-family: "Courier New", courier;
+            scrollbar-color: #a1a100 transparent;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .page-wrapper {
+            width: 100%; 
+            max-width: 800px; 
+            margin: auto; 
+            height: 100%; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: black; 
+            padding: 20px;
+            margin: 0px; 
+            border-radius: 0px;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+            border: 5px solid #F20000;
+            animation: borderFlash 2s steps(1) infinite;
+        }
+
+        .main-content-box {
+            width: 100%; 
+            flex-grow: 1; 
+            overflow-y: auto; 
+            box-sizing: border-box;
+            scrollbar-color: #a1a100 #000000;
+            scrollbar-width: thin;
+        }
+
+        .main-content-box::-webkit-scrollbar { width: 10px; }
+        .main-content-box::-webkit-scrollbar-track { background: #000000; }
+        .main-content-box::-webkit-scrollbar-thumb {
+            background: #a1a100;
+            border: 2px solid #000000;
+        }
+        .main-content-box::-webkit-scrollbar-thumb:hover { background: #FFF; }
+
+        .inner-stamp-box {
+            float: left;
+            width: 160px; 
+            height: 280px; 
+            margin: 10px 20px 10px 0;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid #F20000;
+            animation: borderFlash 2s steps(1) infinite;
+        }
+
+        .stamp-track {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+            animation: stampScroll 60s linear infinite; 
+        }
+        .stamp-track:hover { animation-play-state: paused; }
+        .stamp-track img {
+            float: none; 
+            max-width: 140px; 
+            height: auto;     
+            display: block;
+            image-rendering: pixelated; 
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: #a1a100;
+            font-family: "Courier New", courier;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0;
+        }
+        .toggle-btn:hover { color: #FFF; }
+    </style>
 </head>
-
-<style>
-@keyframes bgscroll {
-    from {background-position: 200px 200px;}
-    to {background-position: -200px -200px;}
-}
-
-@keyframes stampScroll {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); } 
-}
-
-@keyframes borderFlash {
-    0%, 49.9% { border-color: #F20000; }
-    50%, 100% { border-color: #003BFF; }
-}
-
-img {float:left;}
-
-body {
-    background-image:url(reg/bg2.png);
-    background-size: 200px 200px;
-    color: #a1a100;
-    animation: bgscroll 10s linear infinite;
-    overflow: hidden; 
-    font-family: "Courier New", courier;
-    scrollbar-color: #a1a100 transparent;
-    height: 100vh;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.container {
-    background-color: black; 
-    padding: 20px;
-    margin: 0px; 
-    border-radius: 0px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
-    border: 5px solid #F20000;
-    animation: borderFlash 2s steps(1) infinite;
-}
-
-.main-content-box {
-    width: 100%; 
-    flex-grow: 1; 
-    overflow-y: auto; 
-    box-sizing: border-box;
-    scrollbar-color: #a1a100 #000000;
-    scrollbar-width: thin;
-}
-
-.main-content-box::-webkit-scrollbar { width: 10px; }
-.main-content-box::-webkit-scrollbar-track { background: #000000; }
-.main-content-box::-webkit-scrollbar-thumb {
-    background: #a1a100;
-    border: 2px solid #000000;
-}
-.main-content-box::-webkit-scrollbar-thumb:hover { background: #FFF; }
-
-.inner-stamp-box {
-    float: left;
-    width: 160px; 
-    height: 280px; 
-    margin: 10px 20px 10px 0;
-    overflow: hidden;
-    position: relative;
-    border: 3px solid #F20000;
-    animation: borderFlash 2s steps(1) infinite;
-}
-
-.stamp-track {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    animation: stampScroll 60s linear infinite; 
-}
-.stamp-track:hover { animation-play-state: paused; }
-.stamp-track img {
-    float: none; 
-    max-width: 140px; 
-    height: auto;     
-    display: block;
-    image-rendering: pixelated; 
-}
-
-.toggle-btn {
-    background: transparent;
-    border: none;
-    color: #a1a100;
-    font-family: "Courier New", courier;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: underline;
-    padding: 0;
-}
-.toggle-btn:hover { color: #FFF; }
-</style>
-
 <body>
-    <div style="width: 100%; max-width: 800px; margin: auto; height: 100%; display: flex; flex-direction: column; gap: 15px; box-sizing: border-box;">
+    <div class="page-wrapper">
     
         <div style="flex-shrink: 0; display: flex; justify-content: center; width: 100%;">
             <img src="reg/sx.gif" alt="welcome to my fuckin page" style="float: none; max-width: 100%; height: auto;">
         </div>
 
         <div class="container main-content-box">
-            
             <div class="inner-stamp-box">
                 <div class="stamp-track">
                     <img src="internetpixels/mageofdoom.webp" alt="stamp">
@@ -144,7 +152,7 @@ body {
                 </div>
             </div>
 
-            <img src="reg/jackson.png" width="150" style="margin: 10px; border: solid 5px #626262; max-width: 100%; height: auto;">
+            <img src="reg/jackson.png" width="150" style="margin: 10px; border: solid 5px #626262; max-width: 100%; height: auto;" alt="welcome to my fucking page.">
 
             <p class="quirk-me">more shit soon.</p>
             <p class="quirk-me">some stuff works but it isnt the best yet.</p>
@@ -159,55 +167,52 @@ body {
     </div>
 
 <script>
+    // title
     const titles = ["2up fucker.", "wanna 2ee thiis diick?", "no??", "FUCK YOU!!"];
     let currentIndex = 0;
-    function cycleTitle() {
+    setInterval(() => {
         document.title = titles[currentIndex];
         currentIndex = (currentIndex + 1) % titles.length;
-    }
-    setInterval(cycleTitle, 2000);
+    }, 2000);
 
+    // stamp dup
     const track = document.querySelector('.stamp-track');
     if (track) { track.innerHTML += track.innerHTML; }
 
-function applySolluxQuirk(text) {
-    return text
-        .replace(/\bto\b/gi, 'two')
-        .replace(/\btoo\b/gi, 'two')
-        .replace(/\btwo\b/gi, 'two')
-        
-        .replace(/s/g, '2')
-        .replace(/S/g, '2')
-        
-        .replace(/i/g, 'ii')
-        .replace(/I/g, 'ii');
-}
+    // quirk engine
+    function applySolluxQuirk(text) {
+        return text
+            .replace(/\bto\b/gi, 'two')
+            .replace(/\btoo\b/gi, 'two')
+            .replace(/\btwo\b/gi, 'two')
+            .replace(/s/g, '2')
+            .replace(/S/g, '2')
+            .replace(/i/g, 'ii')
+            .replace(/I/g, 'ii');
+    }
 
     const quirkElements = document.querySelectorAll('.quirk-me');
     const toggleBtn = document.getElementById('quirkToggle');
     
     quirkElements.forEach(el => {
-        const originalText = el.textContent;
-        el.setAttribute('data-normal', originalText);
-        el.setAttribute('data-quirked', applySolluxQuirk(originalText));
+        const originalHTML = el.innerHTML; 
+        el.setAttribute('data-normal', originalHTML);
+        el.setAttribute('data-quirked', applySolluxQuirk(originalHTML));
     });
 
     function renderText(quirkOff) {
         quirkElements.forEach(el => {
             if (quirkOff === 'true') {
-                el.textContent = el.getAttribute('data-normal');
+                el.innerHTML = el.getAttribute('data-normal');
             } else {
-                el.textContent = el.getAttribute('data-quirked');
+                el.innerHTML = el.getAttribute('data-quirked');
             }
         });
     }
 
     let savedQuirkState = localStorage.getItem('quirkOff') || 'false';
-
-    if (savedQuirkState === 'true') {
-        if (toggleBtn) toggleBtn.textContent = 'QUIRK: OFF';
-    } else {
-        if (toggleBtn) toggleBtn.textContent = 'QUIRK: ON';
+    if (toggleBtn) {
+        toggleBtn.textContent = savedQuirkState === 'true' ? 'QUIRK: OFF' : 'QUIRK: ON';
     }
     renderText(savedQuirkState);
 
